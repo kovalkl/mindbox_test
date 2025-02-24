@@ -4,6 +4,9 @@ import Paper from "@mui/material/Paper";
 
 import { TodoInput } from "@/components/TodoApp/components/TodoInput/TodoInput";
 import { TodoList } from "@/components/TodoApp/components/TodoList/TodoList";
+import { TodoControls } from "@/components/TodoApp/components/TodoControls/TodoControls";
+
+import { getIncompleteTodosCount } from "@/components/TodoApp/components/getIncompleteTodosCount";
 
 import { TodoType } from "@/components/TodoApp/types";
 
@@ -29,7 +32,7 @@ export const TodoApp = () => {
     <Paper className="todo-app">
       <TodoInput addTodo={addTodo} />
       <TodoList todos={todos} toggleCompleted={toggleCompleted} />
-      {/* <TodoControls /> */}
+      <TodoControls todoCount={getIncompleteTodosCount(todos)} />
     </Paper>
   );
 };

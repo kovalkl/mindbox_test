@@ -39,6 +39,17 @@ export const theme = createTheme({
             backgroundColor: COLORS.WHITE,
             minWidth: "400px",
           },
+          "&.todo-controls": {
+            padding: "1rem",
+            minHeight: "50px",
+            alignItems: "center",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            fontWeight: "bold",
+            "& *": {
+              fontSize: "0.85rem",
+            },
+          },
         },
       },
     },
