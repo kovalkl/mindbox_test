@@ -1,13 +1,11 @@
 import { useState } from "react";
 
-import { Stack } from "@mui/material";
+import Paper from "@mui/material/Paper";
 
 import { TodoInput } from "@/components/TodoApp/components/TodoInput/TodoInput";
+import { TodoList } from "@/components/TodoApp/components/TodoList/TodoList";
 
-type TodoType = {
-  text: string;
-  isCompleted: boolean;
-};
+import { TodoType } from "@/components/TodoApp/types";
 
 export const TodoApp = () => {
   const [todos, setTodos] = useState<TodoType[]>([]);
@@ -17,10 +15,10 @@ export const TodoApp = () => {
   };
 
   return (
-    <Stack className="todo-app">
+    <Paper className="todo-app">
       <TodoInput addTodo={addTodo} />
-      {/* <TodoList /> */}
+      <TodoList todos={todos} />
       {/* <TodoControls /> */}
-    </Stack>
+    </Paper>
   );
 };

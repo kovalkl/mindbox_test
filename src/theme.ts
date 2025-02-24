@@ -17,6 +17,12 @@ export const theme = createTheme({
       textAlign: "center",
       marginBottom: "1rem",
     },
+    body2: {
+      color: COLORS.INFO,
+      fontSize: "1.5rem",
+      textAlign: "center",
+      padding: "1rem",
+    },
   },
   components: {
     MuiCssBaseline: {
@@ -32,6 +38,23 @@ export const theme = createTheme({
           "&.todo-app": {
             backgroundColor: COLORS.WHITE,
             minWidth: "400px",
+          },
+        },
+      },
+    },
+    MuiPaper: {
+      defaultProps: {
+        square: true,
+      },
+      styleOverrides: {
+        root: {
+          "&.todo-app": {
+            backgroundColor: COLORS.WHITE,
+            minWidth: "400px",
+            component: "main",
+            "& > :not(:last-child)": {
+              borderBottom: `1px solid ${COLORS.SECONDARY}`,
+            },
           },
         },
       },

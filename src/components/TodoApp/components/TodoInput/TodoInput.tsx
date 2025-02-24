@@ -1,6 +1,6 @@
 import IconButton from "@mui/material/IconButton";
 import InputBase from "@mui/material/InputBase";
-import Paper from "@mui/material/Paper";
+import Stack from "@mui/material/Stack";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useState } from "react";
 
@@ -27,7 +27,8 @@ export const TodoInput = ({ addTodo }: TodoInputProps) => {
   };
 
   return (
-    <Paper
+    <Stack
+      direction="row"
       component="form"
       onSubmit={submitForm}
       sx={{
@@ -47,6 +48,6 @@ export const TodoInput = ({ addTodo }: TodoInputProps) => {
         inputProps={{ "aria-label": PLACEHOLDER_TEXT }}
         sx={{ ml: 1, flex: 1 }}
       />
-    </Paper>
+    </Stack>
   );
 };
