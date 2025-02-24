@@ -59,5 +59,32 @@ export const theme = createTheme({
         },
       },
     },
+    MuiListItem: {
+      styleOverrides: {
+        root: {
+          padding: "0 1rem",
+          "&.todo-item:not(:last-child)": {
+            borderBottom: `1px solid ${COLORS.SECONDARY}`,
+          },
+        },
+      },
+    },
+    MuiList: {
+      styleOverrides: {
+        root: {
+          padding: "0",
+        },
+      },
+    },
+    MuiFormControlLabel: {
+      styleOverrides: {
+        root: {
+          "&.todo-completed": {
+            textDecoration: "line-through",
+            color: COLORS.INFO,
+          },
+        },
+      },
+    },
   },
 });

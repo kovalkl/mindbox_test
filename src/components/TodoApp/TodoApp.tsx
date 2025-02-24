@@ -11,13 +11,24 @@ export const TodoApp = () => {
   const [todos, setTodos] = useState<TodoType[]>([]);
 
   const addTodo = (newTodo: string) => {
-    setTodos((todos) => [...todos, { text: newTodo, isCompleted: false }]);
+    setTodos((todos) => [
+      ...todos,
+      { text: newTodo, isCompleted: false, id: Date.now().toString() },
+    ]);
+  };
+
+  const toggleCompleted = (id: string) => {
+    setTodos((todos) =>
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo
+      )
+    );
   };
 
   return (
     <Paper className="todo-app">
       <TodoInput addTodo={addTodo} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} toggleCompleted={toggleCompleted} />
       {/* <TodoControls /> */}
     </Paper>
   );
