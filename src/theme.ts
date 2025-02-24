@@ -14,6 +14,8 @@ export const theme = createTheme({
     h1: {
       fontSize: "4rem",
       color: COLORS.SECONDARY,
+      textAlign: "center",
+      marginBottom: "1rem",
     },
   },
   components: {
@@ -21,6 +23,16 @@ export const theme = createTheme({
       styleOverrides: {
         body: {
           backgroundColor: COLORS.LIGHT,
+        },
+      },
+    },
+    MuiStack: {
+      styleOverrides: {
+        root: {
+          "&.todo-app": {
+            backgroundColor: COLORS.WHITE,
+            minWidth: "400px",
+          },
         },
       },
     },
