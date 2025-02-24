@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Paper from "@mui/material/Paper";
 
@@ -8,10 +8,21 @@ import { TodoControls } from "@/components/TodoApp/components/TodoControls/TodoC
 
 import { getIncompleteTodosCount } from "@/components/TodoApp/components/getIncompleteTodosCount";
 
-import { TodoType } from "@/components/TodoApp/types";
+import { FilterType, TodoType } from "@/components/TodoApp/types";
 
 export const TodoApp = () => {
   const [todos, setTodos] = useState<TodoType[]>([]);
+  const [filteredTodos, setFilteredTodos] = useState<TodoType[]>([]);
+  const [currentFilter, setCurrentFilter] = useState<FilterType>("all");
+
+  useEffect(() => {
+    const filterMap = {
+      all: todos,
+      active: todos.filter((todo) => !todo.isCompleted),
+      completed: todos.filter((todo) => todo.isCompleted),
+    };
+    setFilteredTodos(filterMap[currentFilter]);
+  }, [todos, currentFilter]);
 
   const addTodo = (newTodo: string) => {
     setTodos((todos) => [
@@ -35,10 +46,12 @@ export const TodoApp = () => {
   return (
     <Paper className="todo-app">
       <TodoInput addTodo={addTodo} />
-      <TodoList todos={todos} toggleCompleted={toggleCompleted} />
+      <TodoList todos={filteredTodos} toggleCompleted={toggleCompleted} />
       <TodoControls
         todoCount={getIncompleteTodosCount(todos)}
         clearCompleted={clearCompleted}
+        currentFilter={currentFilter}
+        setCurrentFilter={setCurrentFilter}
       />
     </Paper>
   );

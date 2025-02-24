@@ -9,6 +9,8 @@ const COLORS = {
   DARK: "#4D4D4D",
 };
 
+const CONTENT_WIDTH_PX = 600;
+
 export const theme = createTheme({
   typography: {
     h1: {
@@ -37,14 +39,14 @@ export const theme = createTheme({
         root: {
           "&.todo-app": {
             backgroundColor: COLORS.WHITE,
-            minWidth: "400px",
           },
           "&.todo-controls": {
             padding: "1rem",
             minHeight: "50px",
             alignItems: "center",
             flexDirection: "row",
-            justifyContent: "space-between",
+            justifyContent: "flex-end",
+            gap: "1rem",
             fontWeight: "bold",
             "& *": {
               fontSize: "0.85rem",
@@ -61,7 +63,7 @@ export const theme = createTheme({
         root: {
           "&.todo-app": {
             backgroundColor: COLORS.WHITE,
-            minWidth: "400px",
+            width: `${CONTENT_WIDTH_PX}px`,
             component: "main",
             "& > :not(:last-child)": {
               borderBottom: `1px solid ${COLORS.SECONDARY}`,
@@ -73,7 +75,7 @@ export const theme = createTheme({
     MuiListItem: {
       styleOverrides: {
         root: {
-          padding: "0 1rem",
+          padding: "0.5rem 1rem",
           "&.todo-item:not(:last-child)": {
             borderBottom: `1px solid ${COLORS.SECONDARY}`,
           },
@@ -94,6 +96,9 @@ export const theme = createTheme({
             textDecoration: "line-through",
             color: COLORS.INFO,
           },
+          "& .MuiRadio-root.Mui-checked + span": {
+            color: COLORS.PRIMARY,
+          },
         },
       },
     },
@@ -102,6 +107,7 @@ export const theme = createTheme({
         root: {
           color: COLORS.DARK,
           textTransform: "none",
+          padding: "0.5rem 1rem",
           "&:hover": {
             backgroundColor: COLORS.LIGHT,
           },

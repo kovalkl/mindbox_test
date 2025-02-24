@@ -16,6 +16,7 @@ export const TodoItem = ({ todo, toggleCompleted }: TodoItemType) => {
   return (
     <ListItem className="todo-item">
       <FormControlLabel
+        sx={{ wordBreak: "break-word", whiteSpace: "normal" }}
         className={todo.isCompleted ? "todo-completed" : ""}
         control={
           <Checkbox
