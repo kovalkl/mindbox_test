@@ -9,7 +9,7 @@
 1. Скопируйте репозиторий:
 
    ```bash
-   git clone https://github.com/username/mindbox-todo.git
+   git clone https://github.com/kovalkl/mindbox_test.git
 2. Запустите проект
    ```bash
    npm i && npm run start
