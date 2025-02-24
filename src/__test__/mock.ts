@@ -14,6 +14,6 @@ export const mockTodos: TodoType[] = [
   {
     id: "3",
     text: "test3",
-    isCompleted: false,
+    isCompleted: true,
   },
 ];
