@@ -37,7 +37,7 @@ export const TodoInput = ({ addTodo }: TodoInputProps) => {
         width: "100%",
       }}
     >
-      <IconButton sx={{ p: "10px" }} aria-label="expand-more">
+      <IconButton sx={{ p: "10px" }} aria-label="expand-more" disabled>
         <ExpandMoreIcon />
       </IconButton>
       <InputBase
