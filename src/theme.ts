@@ -97,5 +97,16 @@ export const theme = createTheme({
         },
       },
     },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          color: COLORS.DARK,
+          textTransform: "none",
+          "&:hover": {
+            backgroundColor: COLORS.LIGHT,
+          },
+        },
+      },
+    },
   },
 });

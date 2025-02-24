@@ -28,11 +28,18 @@ export const TodoApp = () => {
     );
   };
 
+  const clearCompleted = () => {
+    setTodos((todos) => todos.filter((todo) => !todo.isCompleted));
+  };
+
   return (
     <Paper className="todo-app">
       <TodoInput addTodo={addTodo} />
       <TodoList todos={todos} toggleCompleted={toggleCompleted} />
-      <TodoControls todoCount={getIncompleteTodosCount(todos)} />
+      <TodoControls
+        todoCount={getIncompleteTodosCount(todos)}
+        clearCompleted={clearCompleted}
+      />
     </Paper>
   );
 };
