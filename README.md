@@ -10,7 +10,10 @@
 
    ```bash
    git clone https://github.com/kovalkl/mindbox_test.git
-2. Запустите проект
+2. Перейдите в директорию проекта
+   ```bash
+   cd mindbox_test
+3. Запустите проект
    ```bash
    npm i && npm run start
 ## Функциональность 📌
