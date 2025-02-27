@@ -24,7 +24,12 @@ export const TodoControls = ({
   const counterText = getCounterText(todoCount);
 
   return (
-    <Stack className="todo-controls">
+    <Stack
+      className="todo-controls"
+      sx={{
+        flexDirection: { xs: "column", sm: "row" },
+      }}
+    >
       <Typography sx={{ flexGrow: 1 }}>{counterText}</Typography>
       <TodoFilter
         currentFilter={currentFilter}

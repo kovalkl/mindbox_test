@@ -44,7 +44,7 @@ export const TodoApp = () => {
   };
 
   return (
-    <Paper className="todo-app">
+    <Paper className="todo-app" sx={{ maxWidth: "600px", width: "100%" }}>
       <TodoInput addTodo={addTodo} />
       <TodoList todos={filteredTodos} toggleCompleted={toggleCompleted} />
       <TodoControls

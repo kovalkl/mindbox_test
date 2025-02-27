@@ -9,8 +9,6 @@ const COLORS = {
   DARK: "#4D4D4D",
 };
 
-const CONTENT_WIDTH_PX = 600;
-
 export const theme = createTheme({
   typography: {
     h1: {
@@ -44,9 +42,8 @@ export const theme = createTheme({
             padding: "1rem",
             minHeight: "50px",
             alignItems: "center",
-            flexDirection: "row",
             justifyContent: "flex-end",
-            gap: "1rem",
+            gap: "0.5rem",
             fontWeight: "bold",
             "& *": {
               fontSize: "0.85rem",
@@ -63,7 +60,6 @@ export const theme = createTheme({
         root: {
           "&.todo-app": {
             backgroundColor: COLORS.WHITE,
-            width: `${CONTENT_WIDTH_PX}px`,
             component: "main",
             "& > :not(:last-child)": {
               borderBottom: `1px solid ${COLORS.SECONDARY}`,
@@ -111,6 +107,16 @@ export const theme = createTheme({
           "&:hover": {
             backgroundColor: COLORS.LIGHT,
           },
+        },
+      },
+    },
+    MuiContainer: {
+      styleOverrides: {
+        root: {
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          marginTop: "1rem",
         },
       },
     },
